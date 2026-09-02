@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orders"
+                style="@style/Theme.GreenCart.Heading"
+                android:textColor="@color/md_theme_onBackground"
+                android:textSize="34sp"
+                android:letterSpacing="-0.03"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                app:tabIndicatorHeight="0dp"
+                app:tabMode="scrollable"
+                app:tabGravity="start"
+                app:tabSelectedTextColor="@color/md_theme_primary"
+                app:tabTextColor="@color/md_theme_outline"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabBackground="@drawable/tab_selector_apple"/>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOrders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="80dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_order" />
+
+    <!-- Fixed: Use ConstraintLayout for proper centering -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutEmptyOrders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/emptyContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_orders"
+                android:alpha="0.4"
+                app:tint="@color/md_theme_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Orders Yet"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/md_theme_onBackground"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="You haven't placed any orders yet. Your orders will appear here."
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/md_theme_outline"
+                android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

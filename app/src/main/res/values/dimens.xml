@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pd_screen_horizontal">20dp</dimen>
+    <dimen name="pd_content_top">22dp</dimen>
+    <dimen name="pd_hero_height">320dp</dimen>
+    <dimen name="pd_bottom_bar_padding">20dp</dimen>
+    <dimen name="pd_related_card_width">182dp</dimen>
+</resources>
+

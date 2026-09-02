@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_bg"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp"
+    android:gravity="center_vertical"
+    android:baselineAligned="false">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_location"
+        app:tint="@color/md_theme_primary"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvAddressTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvFullAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No 123, Galle Road, Colombo 03"
+            android:alpha="0.6"
+            android:fontFamily="@font/inter"
+            android:textColor="@color/md_theme_onSurfaceVariant"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btnEditAddress"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_edit"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        app:tint="@color/md_theme_onSurfaceVariant"
+        android:contentDescription="Edit Address" />
+
+</LinearLayout>

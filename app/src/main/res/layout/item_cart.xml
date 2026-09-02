@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="0.5dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/md_theme_surfaceContainerLow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCartProduct"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fresh"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/tvCartProductName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Organic Banana"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/md_theme_onSurface"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
+
+                <ImageButton
+                    android:id="@+id/btnRemoveItem"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/md_theme_outline"
+                    android:alpha="0.4"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvCartProductUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500g"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/md_theme_outline"/>
+
+            <TextView
+                android:id="@+id/tvCartStockStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Out of Stock"
+                android:textColor="@color/md_theme_error"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvCartPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Rs. 130.00"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/md_theme_primary"/>
+
+                <LinearLayout
+                    android:id="@+id/layoutQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_quantity_selector"
+                    android:paddingHorizontal="4dp">
+
+                    <ImageButton
+                        android:id="@+id/btnMinus"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_minus"
+                        app:tint="@color/md_theme_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvQuantity"
+                        android:layout_width="28dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/md_theme_onSurface"/>
+
+                    <ImageButton
+                        android:id="@+id/btnPlus"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_plus"
+                        app:tint="@color/md_theme_primary"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

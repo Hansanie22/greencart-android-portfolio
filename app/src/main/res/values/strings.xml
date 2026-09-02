@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">GreenCart</string>
+    <string name="tagline">✤ ORGANIC &amp; FRESH ✤</string>
+    <string name="loading_text">Cultivating your experience…</string>
+    <string name="developer">Developed by Hansanie Prabodha</string>
+    <string name="payment_card_expires">Expires %1$s</string>
+    <string name="hint_card_number">Card Number</string>
+    <string name="hint_card_expiry">MM/YY</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cd_product_image">Product image</string>
+    <string name="cd_wishlist">Wishlist</string>
+    <string name="cd_quick_add">Quick add</string>
+    <string name="product_name_placeholder">Fresh Red Apple</string>
+    <string name="product_meta_placeholder">Organic • 1kg</string>
+    <string name="product_price_placeholder">LKR 450</string>
+    <string name="support_and_help_title">Support and Help</string>
+    <string name="support_general">General support</string>
+    <string name="support_phone_default">+94 75 8497065</string>
+    <string name="call_support">Call Support</string>
+    <string name="support_message_hint">Type your message</string>
+    <string name="send">Send</string>
+
+    <array name="initial_price_values">
+        <item>500.0</item>
+        <item>3500.0</item>
+    </array>
+
+    <string name="settings_title">Settings</string>
+    <string name="appearance_section">APPEARANCE</string>
+    <string name="dark_mode_label">Dark Mode</string>
+    <string name="auto_theme_label">Auto Theme</string>
+    <string name="auto_theme_icon_desc">Auto theme icon</string>
+    <string name="notifications_section">NOTIFICATIONS</string>
+    <string name="push_notifications_label">Push Notifications</string>
+    <string name="auto_theme_description">Automatically switches between light and dark mode based on ambient light.</string>
+    <string name="auto_theme_not_supported">Auto Theme is not supported on this device.</string>
+    <string name="offer_expires">Expires: %1$s</string>
+    <string name="cd_offer_icon">Offer icon</string>
+    <string name="cd_copy_icon">Copy promocode</string>
+    <string name="offer_name_placeholder">Offer Name</string>
+    <string name="promocode_placeholder">PROMOCODE</string>
+    <string name="coupon_status_active">Active</string>
+    <string name="coupon_status_expired">Expired</string>
+    <string name="coupon_status_used">Used</string>
+    <string name="coupon_timer_placeholder">Expires in 24 hours</string>
+    <string name="copy">Copy</string>
+    <string name="copied_to_clipboard">Promocode copied!</string>
+    <string name="promo_code_enter">Please enter a promo code</string>
+    <string name="promo_code_sign_in">Please sign in to use promo codes</string>
+    <string name="promo_code_unable_to_validate">Unable to validate promo code</string>
+    <string name="promo_code_invalid">Invalid or unavailable promo code</string>
+    <string name="promo_code_network_error">Network error validating promo code</string>
+    <string name="promo_code_applied">Promo code applied!</string>
+    <string name="promo_code_claimed_hint">Claimed! Discount will apply to eligible items.</string>
+    <string name="promo_code_claimed">Claimed</string>
+    <string name="promo_code_failed_to_claim">Failed to claim offer</string>
+    <string name="promo_code_network_error_claim">Network error while claiming offer</string>
+    <string name="promo_code_unable_to_claim">Unable to claim offer</string>
+    <string name="promo_code_applying">Applying…</string>
+    <string name="promo_code_apply">Apply</string>
+    <string name="promo_code_expired">Promo code expired</string>
+    <string name="promo_code_already_used">Promo code already used</string>
+
+    <!-- Payment dialog strings -->
+    <string name="select_payment_method">Select Payment Method</string>
+    <string name="choose_payment_method_subtitle">Choose how you\'d like to pay for this delivery</string>
+    <string name="credit_debit_card">Credit / Debit Card</string>
+    <string name="card_networks">Visa, Mastercard, AMEX</string>
+    <string name="cash_on_delivery">Cash on Delivery</string>
+    <string name="pay_on_arrival">Pay when your order arrives</string>
+    <string name="confirm_continue">Confirm &amp; Continue</string>
+    <string name="selected_payment_indicator">Selected</string>
+    <string name="card_icon">Card icon</string>
+    <string name="cod_icon">Cash icon</string>
+    <string name="notification_icon_description">Notifications</string>
+</resources>

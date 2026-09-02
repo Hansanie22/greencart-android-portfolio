@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Rounded top corners to emulate an iOS-style sheet -->
+    <corners android:topLeftRadius="20dp" android:topRightRadius="20dp" android:bottomLeftRadius="0dp" android:bottomRightRadius="0dp" />
+
+    <!-- Use the surface color so it fits the app theme -->
+    <solid android:color="@color/md_theme_surface" />
+
+    <!-- Subtle stroke to separate from background -->
+    <stroke android:width="0.5dp" android:color="@color/md_theme_outlineVariant" />
+
+    <!-- Slight padding so content doesn't touch edges when clipped -->
+    <padding android:left="0dp" android:top="6dp" android:right="0dp" android:bottom="0dp" />
+
+</shape>
+

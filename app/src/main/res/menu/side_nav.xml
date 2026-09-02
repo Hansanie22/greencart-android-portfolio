@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/main_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@drawable/ic_products"
+            android:title="Products"/>
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_orders"
+            android:title="Orders"/>
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_favorites"
+            android:title="Favorites"/>
+    </group>
+
+    <item android:title="">
+        <menu>
+            <group android:id="@+id/secondary_group" android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_cart"
+                    android:icon="@drawable/ic_cart"
+                    android:title="My Cart"/>
+                <item
+                    android:id="@+id/nav_subscription"
+                    android:icon="@drawable/ic_subscription"
+                    android:title="Subscriptions"/>
+                <item
+                    android:id="@+id/nav_green_points"
+                    android:icon="@drawable/ic_points"
+                    android:title="Green Points"/>
+                <item
+                    android:id="@+id/nav_my_rewards"
+                    android:icon="@drawable/ic_reward"
+                    android:title="My Rewards"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <group android:id="@+id/settings_group" android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_setting"
+                    android:title="Settings"/>
+                <item
+                    android:id="@+id/nav_support_help"
+                    android:icon="@drawable/ic_call"
+                    android:title="Support and Help"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <group android:id="@+id/auth_group">
+                <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/ic_login"
+                    android:title="Login"/>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>

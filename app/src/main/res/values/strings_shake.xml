@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shake_title">Shake to Reveal\nYour Fresh Deal!</string>
+    <string name="shake_hint">Keep shaking your phone for 2 seconds 🌿</string>
+    <string name="back">Back</string>
+    <string name="confetti_desc">Confetti decoration</string>
+    <string name="basket_desc">Vegetable basket</string>
+    <string name="carrot_desc">Golden carrot reward</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="congrats_sub">You\'ve unlocked an exclusive fresh deal!</string>
+    <string name="discount_amount">30% OFF</string>
+    <string name="promo_code">FRESH30</string>
+    <string name="tap_copy_hint">Tap code to copy • Valid for 24 hours</string>
+    <string name="claim_now">CLAIM NOW</string>
+    <string name="terms_note">One-time use. Cannot be combined with other offers.</string>
+    <string name="code_copied">Code copied to clipboard</string>
+    <string name="could_not_clipboard">Could not access clipboard</string>
+    <string name="saving_ellipsis">Saving…</string>
+    <string name="claimed_with_emoji">Claimed! 🎉</string>
+    <string name="offer_claimed_toast">Offer %1$s claimed — enjoy your discount!</string>
+    <string name="party_emoji">🎉</string>
+</resources>
+
+

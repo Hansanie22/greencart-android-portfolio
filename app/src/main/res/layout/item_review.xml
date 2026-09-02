@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeColor="?colorOutlineVariant"
+    app:strokeWidth="1dp"
+    app:cardBackgroundColor="?colorSurfaceContainerLowest">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Reviewer Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?colorPrimaryContainer">
+                <TextView
+                    android:id="@+id/txtReviewerInitial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="?colorOnPrimaryContainer"
+                    android:fontFamily="@font/poppins"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtReviewerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sarah Johnson"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="?colorOnSurface"
+                    android:fontFamily="@font/inter"/>
+
+                <TextView
+                    android:id="@+id/txtReviewDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="2 days ago"
+                    android:textSize="11sp"
+                    android:textColor="?colorOnSurfaceVariant"
+                    android:fontFamily="@font/inter"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="#FFB300"/>
+                <TextView
+                    android:id="@+id/txtReviewRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="5.0"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Verified Purchase Badge -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/verifiedBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#E8F5E9"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="✓ Verified Purchase"
+                android:textColor="#2E7D32"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Review Text -->
+        <TextView
+            android:id="@+id/txtReviewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="These apples are absolutely amazing! Fresh, crisp, and incredibly sweet. You can really taste the difference with organic produce. Will definitely buy again!"
+            android:textSize="13sp"
+            android:maxLines="6"
+            android:lineSpacingMultiplier="1.4"
+            android:textColor="?colorOnSurface"
+            android:fontFamily="@font/inter"/>
+
+        <!-- Helpful Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Helpful?"
+                android:textSize="12sp"
+                android:textColor="?colorOnSurfaceVariant"
+                android:fontFamily="@font/inter"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHelpful"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="👍 24"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingTop="8dp">
+
+    <!-- Handle -->
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_sheet_handler" />
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Edit Schedule"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:letterSpacing="-0.02"/>
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            android:contentDescription="Close"
+            app:tint="@color/md_theme_outline"/>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:maxHeight="600dp"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="32dp">
+
+            <!-- Schedule Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Schedule Name"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="17sp"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:boxStrokeWidth="0dp"
+                app:boxBackgroundColor="@color/md_theme_surfaceVariant"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etScheduleName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g., Daily Fresh Milk"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter"
+                    android:padding="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Frequency -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Frequency"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="17sp"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/md_theme_surface">
+
+                <RadioGroup
+                    android:id="@+id/rgFrequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbDaily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Weekly"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter"
+                        android:padding="16dp"
+                        android:checked="true"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/md_theme_outline"
+                        android:alpha="0.1"
+                        android:layout_marginHorizontal="16dp"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbCustomDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Every 2 Weeks"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter"
+                        android:padding="16dp"/>
+                </RadioGroup>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins"
+                android:text="Delivery Day"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/layoutEditDeliveryDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <!-- Delivery Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery Time"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="17sp"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTimeSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/md_theme_surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_clock"
+                        app:tint="@color/md_theme_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvSelectedTime"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="7:00 AM"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter"/>
+
+                    <ImageButton
+                        android:id="@+id/btnChangeTime"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:padding="4dp"
+                        android:scaleType="centerInside"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_arrow"
+                        android:contentDescription="Change time"
+                        app:tint="@color/md_theme_outline"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Start Date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Date"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="17sp"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDateSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/md_theme_surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/md_theme_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvSelectedDate"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Tomorrow"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter"/>
+
+                    <ImageButton
+                        android:id="@+id/btnChangeDate"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:padding="4dp"
+                        android:scaleType="centerInside"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_arrow"
+                        android:contentDescription="Change date"
+                        app:tint="@color/md_theme_outline"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/md_theme_surface"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/md_theme_outlineVariant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search Products"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="17sp"
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Live suggestions, voice search, and stock-safe variant selection"
+                        android:textColor="@color/md_theme_primary"
+                        android:textSize="13sp"
+                        android:alpha="0.75"
+                        android:fontFamily="@font/inter"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_bg"
+                            android:hint="Search fruits, vegetables, dairy..."
+                            app:hintTextColor="@color/md_theme_primary"
+                            app:boxBackgroundMode="none"
+                            app:startIconDrawable="@drawable/ic_search_small"
+                            app:startIconMinSize="20dp"
+                            app:startIconTint="@color/md_theme_primary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etSearchProduct"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="12dp"
+                                android:imeOptions="actionSearch"
+                                android:inputType="text"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/inter"
+                                android:background="@android:color/transparent"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageButton
+                            android:id="@+id/btnVoiceSearchProduct"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_quantity_selector"
+                            android:contentDescription="Voice search"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_mic_small"
+                            app:tint="@color/md_theme_primary"/>
+
+                    </LinearLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSearchProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Search &amp; Add Item"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/md_theme_onPrimary"
+                        app:backgroundTint="@color/md_theme_primary"
+                        app:cornerRadius="14dp"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/layoutSearchResults"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
+                    android:text="Selected Items"
+                    android:textColor="@color/md_theme_onSurface"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSubscriptionItemsEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:text="Save Changes"
+            android:textAllCaps="false"
+            android:fontFamily="@font/inter"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_theme_onPrimary"
+            app:backgroundTint="@color/md_theme_primary"
+            app:cornerRadius="16dp"
+            app:elevation="2dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

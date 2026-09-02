@@ -1,0 +1,13 @@
+## GreenCart - Local Properties Template
+# Copy this file to 'local.properties' and fill in your local Android SDK path and API keys.
+
+# Location of your local Android SDK (e.g. C\:\\Users\\YourUsername\\AppData\\Local\\Android\\Sdk on Windows)
+sdk.dir=C\:\\Users\\YourUsername\\AppData\\Local\\Android\\Sdk
+
+# Google Maps Platform API Key (Required for Delivery & Live Tracking maps)
+MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY_HERE
+
+# PayHere Payment Gateway Credentials (Sandbox or Live)
+PAYHERE_MERCHANT_ID=YOUR_PAYHERE_MERCHANT_ID
+PAYHERE_MERCHANT_SECRET=YOUR_PAYHERE_MERCHANT_SECRET
+PAYHERE_SANDBOX=true

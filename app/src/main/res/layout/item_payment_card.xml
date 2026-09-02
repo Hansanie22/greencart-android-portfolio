@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#E5E5EA"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+
+        <RadioButton
+            android:id="@+id/rbSelectCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <ImageView
+            android:id="@+id/ivCardLogo"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_visa"
+            android:scaleType="fitCenter"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCardMaskedNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="**** **** **** 4111"
+                android:fontFamily="@font/inter"
+                android:textSize="15sp"
+                android:textColor="@color/md_theme_onSurface"/>
+
+            <TextView
+                android:id="@+id/tvCardExpiry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expires 12/26"
+                android:textSize="12sp"
+                android:alpha="0.6"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnDeleteCard"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_delete"
+            android:padding="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete card" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

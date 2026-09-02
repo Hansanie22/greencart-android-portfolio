@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <View
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="#E5E5EA" />
+
+    <TextView
+        android:id="@+id/sheetProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fresh Red Apple"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/md_theme_onSurface"
+        android:letterSpacing="-0.02" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Select Variant"
+        android:fontFamily="@font/inter"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/md_theme_onSurface" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupVariants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:chipSpacingHorizontal="8dp" />
+
+    <TextView
+        android:id="@+id/tvSheetPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="LKR 0"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/md_theme_primary" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Quantity"
+            android:fontFamily="@font/inter"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/md_theme_onSurface" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_search_bar"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/btnMinus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_minus"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="@color/md_theme_primary"/>
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/md_theme_onSurface"/>
+
+            <ImageButton
+                android:id="@+id/btnPlus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_plus"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="@color/md_theme_primary"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmAdd"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:text="Add to Cart • LKR 450"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        app:cornerRadius="18dp"
+        app:elevation="0dp"
+        android:insetBottom="0dp"
+        android:insetTop="0dp" />
+
+</LinearLayout>

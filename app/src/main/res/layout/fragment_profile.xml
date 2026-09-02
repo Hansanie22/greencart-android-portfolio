@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Account"
+            style="@style/Theme.GreenCart.Heading"
+            android:textSize="28sp"
+            android:layout_marginBottom="24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfileLarge"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_user"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.GreenCart.Circle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChangeImage"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignEnd="@id/ivProfileLarge"
+                    android:layout_alignBottom="@id/ivProfileLarge"
+                    android:padding="0dp"
+                    app:icon="@drawable/ic_edit"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:cornerRadius="16dp"
+                    android:backgroundTint="@color/md_theme_primary" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:id="@+id/tvProfileFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvProfileEmailDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="email@example.com"
+                    android:alpha="0.5" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PERSONAL INFORMATION"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:alpha="0.4"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <EditText
+                    android:id="@+id/etFirstName"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="First Name"
+                    android:paddingHorizontal="16dp"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/etLastName"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="Last Name"
+                    android:paddingHorizontal="16dp"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="Email Address"
+                android:paddingHorizontal="16dp"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/etMobile"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="Mobile Number"
+                android:paddingHorizontal="16dp"
+                android:inputType="phone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdateProfile"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:text="Save Changes"
+                app:cornerRadius="14dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PREFERENCES"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:alpha="0.4"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSavedAddresses"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Saved Addresses"
+                android:gravity="start|center_vertical"
+                app:icon="@drawable/ic_location"
+                android:textColor="@color/md_theme_onSurface"
+                app:iconTint="@color/md_theme_primary" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F2F7" android:layout_marginHorizontal="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPaymentMethods"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Payment Methods"
+                android:gravity="start|center_vertical"
+                app:icon="@drawable/ic_card"
+                android:textColor="@color/md_theme_onSurface"
+                app:iconTint="@color/md_theme_primary" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignOutProfile"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Sign Out"
+            android:textColor="#FF3B30" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

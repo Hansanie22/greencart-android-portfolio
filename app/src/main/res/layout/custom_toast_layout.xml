@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toast_card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="24dp"
+    android:alpha="0.95"
+    app:cardCornerRadius="50dp"
+    app:cardElevation="12dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/md_theme_outlineVariant"
+    app:cardBackgroundColor="@color/md_theme_inverseSurface">
+
+    <LinearLayout
+        android:id="@+id/toast_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp">
+
+        <ImageView
+            android:id="@+id/toast_icon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_check"
+            android:layout_marginEnd="10dp"
+            app:tint="@color/md_theme_primary"/>
+
+        <TextView
+            android:id="@+id/toast_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saved successfully"
+            android:textColor="@color/md_theme_inverseOnSurface"
+            android:textSize="15sp"
+            android:fontFamily="@font/poppins_semibold"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

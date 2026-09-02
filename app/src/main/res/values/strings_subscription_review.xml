@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="review_title">Review — %1$s</string>
+    <string name="delivery_scheduled">Delivery scheduled: %1$s</string>
+    <string name="upcoming_delivery">Upcoming delivery</string>
+    <string name="minus_amount">- %1$s</string>
+    <string name="processing">Processing…</string>
+    <string name="payment_successful">Payment successful! Order confirmed.</string>
+    <string name="pay_now">Pay Now</string>
+</resources>
+

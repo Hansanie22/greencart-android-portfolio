@@ -1,0 +1,120 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.google.gms.google-services'
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { stream ->
+        localProperties.load(stream)
+    }
+}
+
+def mapsApiKey = (
+        project.findProperty("MAPS_API_KEY")
+                ?: localProperties.getProperty("MAPS_API_KEY")
+                ?: System.getenv("MAPS_API_KEY")
+                ?: ""
+).toString()
+
+def payHereMerchantId = (
+        project.findProperty("PAYHERE_MERCHANT_ID")
+                ?: localProperties.getProperty("PAYHERE_MERCHANT_ID")
+                ?: System.getenv("PAYHERE_MERCHANT_ID")
+                ?: ""
+).toString()
+
+def payHereMerchantSecret = (
+        project.findProperty("PAYHERE_MERCHANT_SECRET")
+                ?: localProperties.getProperty("PAYHERE_MERCHANT_SECRET")
+                ?: System.getenv("PAYHERE_MERCHANT_SECRET")
+                ?: ""
+).toString()
+
+def payHereSandbox = (
+        project.findProperty("PAYHERE_SANDBOX")
+                ?: localProperties.getProperty("PAYHERE_SANDBOX")
+                ?: System.getenv("PAYHERE_SANDBOX")
+                ?: "true"
+).toString()
+
+android {
+    namespace 'com.hansanie.greencart'
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.hansanie.greencart"
+        minSdk 28
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders = [MAPS_API_KEY: mapsApiKey]
+        buildConfigField "String", "MAPS_API_KEY", '"' + mapsApiKey + '"'
+        buildConfigField "String", "PAYHERE_MERCHANT_ID", '"' + payHereMerchantId + '"'
+        buildConfigField "String", "PAYHERE_MERCHANT_SECRET", '"' + payHereMerchantSecret + '"'
+        buildConfigField "boolean", "PAYHERE_SANDBOX", payHereSandbox.equalsIgnoreCase("true") ? "true" : "false"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.analytics
+    implementation libs.firebase.auth
+    implementation libs.firebase.firestore
+    implementation libs.firebase.storage
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+    implementation(libs.retrofit)
+    implementation libs.glide
+    implementation libs.converter.gson
+    annotationProcessor libs.compiler
+    implementation libs.firebase.database
+    implementation libs.volley
+    implementation libs.firebase.appcheck.playintegrity
+    implementation libs.firebase.appcheck.debug
+    implementation libs.ccp
+    implementation libs.play.services.location
+    implementation libs.play.services.maps
+    implementation libs.sqlite
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler
+    implementation libs.zxing.android.embedded
+    implementation libs.firebase.messaging
+    implementation libs.localbroadcastmanager
+    implementation libs.work.runtime
+    implementation libs.payhere.android.sdk
+    implementation libs.lottie
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.lifecycle.viewmodel
+    implementation libs.lifecycle.viewmodel.ktx
+    implementation libs.logging.interceptor
+}

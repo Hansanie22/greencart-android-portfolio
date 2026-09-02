@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/md_theme_surfaceContainer"
+    android:padding="28dp"
+    android:gravity="start">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="@color/md_theme_outlineVariant">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alex Freeman"
+        android:textSize="20sp"
+        android:textColor="@color/md_theme_onSurface"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:letterSpacing="-0.02"/>
+
+    <TextView
+        android:id="@+id/userEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alex.freeman@email.com"
+        android:textSize="13sp"
+        android:textColor="@color/md_theme_onSurfaceVariant"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="2dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginTop="18dp"
+        android:text="Edit Profile"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:backgroundTint="@color/md_theme_primary"
+        android:textColor="@color/md_theme_onPrimary"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:iconSize="14dp"
+        app:cornerRadius="17dp"
+        app:elevation="0dp"
+        app:rippleColor="@color/md_theme_onPrimary" />
+
+</LinearLayout>

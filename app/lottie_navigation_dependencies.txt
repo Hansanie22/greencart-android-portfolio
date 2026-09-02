@@ -1,0 +1,8 @@
+// Lottie
+implementation 'com.airbnb.android:lottie:6.4.0'
+// Navigation Fragment
+implementation 'androidx.navigation:navigation-fragment:2.7.7'
+implementation 'androidx.navigation:navigation-ui:2.7.7'
+// Material 3 (already present as material, but for explicit M3 widgets if needed)
+implementation 'com.google.android.material:material:1.13.0'
+

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/md_theme_surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvOrderID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="#ORD-8821"
+                android:textColor="@color/md_theme_onSurface"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bg_status_delivered"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Delivered"
+                android:textColor="#2E7D32"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvOrderDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.6"
+            android:fontFamily="@font/inter"
+            android:text="Placed on Oct 24, 2023"
+            android:textColor="@color/md_theme_outline"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="16dp"
+            android:alpha="0.1"
+            android:background="@color/md_theme_onSurface" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Amount"
+                    android:textSize="12sp"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/inter"/>
+
+                 <TextView
+                     android:id="@+id/tvOrderAmount"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:fontFamily="@font/poppins"
+                     android:text="Rs. 4,250.00"
+                     android:textColor="@color/md_theme_primary"
+                     android:textSize="18sp"
+                     android:textStyle="bold" />
+
+                  <TextView
+                      android:id="@+id/tvOrderDiscountSummary"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Discount: Rs. 0.00 | Redeem: Rs. 0.00 (0 pts)"
+                      android:textSize="12sp"
+                      android:textColor="@color/md_theme_outline"
+                      android:fontFamily="@font/inter"
+                      android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end|center_vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDetails"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="120dp"
+                    android:layout_height="44dp"
+                    android:text="Details"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

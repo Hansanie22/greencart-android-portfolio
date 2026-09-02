@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/onboardingImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fresh" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_onboarding_gradient" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:paddingBottom="180dp"> <TextView
+        android:id="@+id/onboardingTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Freshly Picked"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:textColor="@android:color/white"
+        android:letterSpacing="-0.02" />
+
+        <TextView
+            android:id="@+id/onboardingDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="We deliver organic vegetables and fruits directly from our farm to your kitchen."
+            android:fontFamily="@font/inter"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#E5E5EA" />
+
+    </LinearLayout>
+</FrameLayout>

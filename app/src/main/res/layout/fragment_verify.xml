@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo"
+        />
+
+    <TextView
+        style="@style/Theme.GreenCart.Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GreenCart"
+        android:textColor="@color/md_theme_primary"
+        android:textSize="18sp" />
+
+    <TextView
+        style="@style/Theme.GreenCart.Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Verification Code"
+        android:textSize="26sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText android:id="@+id/otp1" style="@style/OTPBoxStyle" />
+        <EditText android:id="@+id/otp2" style="@style/OTPBoxStyle" />
+        <EditText android:id="@+id/otp3" style="@style/OTPBoxStyle" />
+        <EditText android:id="@+id/otp4" style="@style/OTPBoxStyle" />
+        <EditText android:id="@+id/otp5" style="@style/OTPBoxStyle" />
+        <EditText android:id="@+id/otp6" style="@style/OTPBoxStyle" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirm"
+        style="@style/Theme.GreenCart.Heading"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:text="Confirm &amp; Finish"
+        android:textAllCaps="false"
+        app:cornerRadius="14dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="Didn't receive a code? "
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tvResend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="Resend"
+            android:textColor="@color/md_theme_primary"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

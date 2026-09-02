@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                style="@style/Theme.GreenCart.Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subscriptions"
+                android:textColor="@color/md_theme_onBackground"
+                android:textSize="34sp"
+                android:letterSpacing="-0.02" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your recurring essential items"
+                android:textColor="@color/md_theme_outline"
+                android:textSize="15sp"
+                android:alpha="0.7"
+                android:fontFamily="@font/inter"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="140dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- Total Savings Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/md_theme_primaryContainer"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Savings"
+                            android:textColor="@color/md_theme_onPrimaryContainer"
+                            android:textSize="15sp"
+                            android:alpha="0.7"
+                            android:fontFamily="@font/inter" />
+
+                        <TextView
+                            android:id="@+id/tvTotalSavings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 1,250.00"
+                            android:textSize="28sp"
+                            android:letterSpacing="-0.02"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/md_theme_onPrimaryContainer"
+                            android:layout_marginTop="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="This month"
+                            android:textColor="@color/md_theme_onPrimaryContainer"
+                            android:textSize="13sp"
+                            android:alpha="0.6"
+                            android:fontFamily="@font/inter"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/ic_savings_bag"
+                        app:tint="@color/md_theme_primary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@color/md_theme_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/md_theme_outlineVariant"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="116dp"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="Smart Reminder"
+                            android:textColor="@color/md_theme_outline"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvSmartReminder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins"
+                            android:maxLines="3"
+                            android:text="Milk likely to run out in 2 days"
+                            android:textColor="@color/md_theme_onSurface"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/md_theme_surface"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/md_theme_outlineVariant"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="116dp"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="Green Points"
+                            android:textColor="@color/md_theme_outline"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvGreenPointsBalance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="320 pts"
+                            android:textColor="@color/md_theme_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Active Schedules Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    style="@style/Theme.GreenCart.Heading"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Active Schedules"
+                    android:textColor="@color/md_theme_onBackground"
+                    android:textSize="22sp"
+                    android:letterSpacing="-0.02" />
+
+                <TextView
+                    android:id="@+id/tvScheduleCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textColor="@color/md_theme_outline"
+                    android:textSize="15sp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/inter" />
+            </LinearLayout>
+
+            <!-- Subscriptions RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSubscriptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingTop="4dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <!-- Empty State (show when no subscriptions) -->
+            <LinearLayout
+                android:id="@+id/layoutEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="48dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_subscription"
+                    android:alpha="0.3"
+                    app:tint="@color/md_theme_outline" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Active Subscriptions"
+                    android:textColor="@color/md_theme_onBackground"
+                    android:textSize="20sp"
+                    android:letterSpacing="-0.01"
+                    android:fontFamily="@font/poppins"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set up recurring deliveries for your\nessential items and save time"
+                    android:textColor="@color/md_theme_outline"
+                    android:textSize="15sp"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabNewSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="88dp"
+        android:text="New Schedule"
+        android:textSize="15sp"
+        android:letterSpacing="0"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/md_theme_onPrimary"
+        app:icon="@drawable/ic_plus"
+        app:iconTint="@color/md_theme_onPrimary"
+        app:backgroundTint="@color/md_theme_primary"
+        app:cornerRadius="16dp"
+        app:elevation="4dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

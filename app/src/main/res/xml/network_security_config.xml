@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">192.168.8.220</domain>
+    </domain-config>
+
+    <!-- All other traffic (internet) still uses HTTPS -->
+    <base-config cleartextTrafficPermitted="false" />
+
+</network-security-config>
+

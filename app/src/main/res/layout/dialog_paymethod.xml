@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingHorizontal="20dp"
+    android:paddingBottom="32dp">
+
+    <!-- Drag Handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/md_theme_outlineVariant"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_payment_method"
+        android:textColor="@color/md_theme_onSurface"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        android:layout_marginBottom="6dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_payment_method_subtitle"
+        android:textColor="@color/md_theme_onSurfaceVariant"
+        android:textSize="13sp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Card Payment Option -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPaymentCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="3dp"
+        app:strokeColor="@color/md_theme_primary"
+        app:cardBackgroundColor="@color/md_theme_primaryContainer"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="18dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:background="@drawable/bg_circle_surface"
+                android:layout_marginEnd="16dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_card"
+                    app:tint="@color/md_theme_onPrimaryContainer"
+                    android:contentDescription="@string/card_icon"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/credit_debit_card"
+                    android:textColor="@color/md_theme_onPrimaryContainer"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/card_networks"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivCardSelected"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_check_circle"
+                    app:tint="@color/md_theme_primary"
+                    android:contentDescription="@string/selected_payment_indicator"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Cash on Delivery Option -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPaymentCOD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/md_theme_outlineVariant"
+        app:cardBackgroundColor="@color/md_theme_surfaceContainerLow"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="18dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:background="@drawable/bg_circle_surface"
+                android:layout_marginEnd="16dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_money"
+                    app:tint="@color/md_theme_onSurface"
+                    android:contentDescription="@string/cod_icon"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_on_delivery"
+                    android:textColor="@color/md_theme_onSurface"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/pay_on_arrival"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivCODSelected"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_radio_unchecked"
+                app:tint="@color/md_theme_outlineVariant"
+                android:contentDescription="@string/selected_payment_indicator"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Confirm Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmPayment"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:text="@string/confirm_continue"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        android:backgroundTint="@color/md_theme_primary"
+        android:textColor="@color/md_theme_onPrimary"/>
+
+</LinearLayout>

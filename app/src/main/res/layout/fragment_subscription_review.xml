@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_top_sheet"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:clipToPadding="false"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="48dp">
+
+        <!-- Drag Handle -->
+        <View
+            android:layout_width="36dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/drag_handle_rounded"
+            android:backgroundTint="@color/md_theme_outlineVariant"
+            android:alpha="0.60"/>
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="28dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvReviewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Review Delivery"
+                android:textColor="@color/md_theme_onBackground"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins"
+                android:letterSpacing="-0.01"/>
+
+            <TextView
+                android:id="@+id/tvReviewDeliveryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Upcoming delivery"
+                android:textColor="@color/md_theme_outline"
+                android:textSize="13sp"
+                android:fontFamily="@font/inter"
+                android:alpha="0.68"/>
+
+        </LinearLayout>
+
+        <!-- Loading State -->
+        <LinearLayout
+            android:id="@+id/layoutReviewLoading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="160dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorSize="36dp"
+                app:trackThickness="3dp"
+                app:indicatorColor="@color/md_theme_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Loading your order…"
+                android:textColor="@color/md_theme_outline"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter"/>
+        </LinearLayout>
+
+        <!-- Main Content -->
+        <LinearLayout
+            android:id="@+id/layoutReviewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingHorizontal="22dp">
+
+            <!-- ORDER ITEMS SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="2dp"
+                android:text="ORDER ITEMS"
+                android:textColor="@color/md_theme_outline"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter"/>
+
+            <!-- Order items now use a simple surface background (no card wrapper) to match checkout style -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/md_theme_surface"
+                android:padding="8dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReviewItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingVertical="6dp"/>
+
+            </LinearLayout>
+
+            <!-- PRICE SUMMARY SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="2dp"
+                android:text="PRICE SUMMARY"
+                android:textColor="@color/md_theme_outline"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layoutPriceBreakdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/md_theme_surface"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <!-- Subtotal -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Subtotal"
+                            android:textColor="@color/md_theme_onSurfaceVariant"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/inter"/>
+                        <TextView
+                            android:id="@+id/tvSubtotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 0.00"
+                            android:textColor="@color/md_theme_onSurface"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins"/>
+                    </LinearLayout>
+
+                    <!-- Subscription Savings -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="12dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Subscription Savings (5%)"
+                            android:textColor="@color/md_theme_primary"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/inter"/>
+                        <TextView
+                            android:id="@+id/tvBaseDiscount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="- Rs. 0.00"
+                            android:textColor="@color/md_theme_primary"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins"/>
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/md_theme_outlineVariant"
+                        android:alpha="0.18"
+                        android:layout_marginVertical="16dp"/>
+
+                    <!-- Promo Code Label -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Promo Code"
+                        android:textColor="@color/md_theme_outline"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/inter"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.03"/>
+
+                    <!-- Promo Code Input -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/edittext_bg"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp">
+
+                        <EditText
+                            android:id="@+id/etPromoCodeSubReview"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter promo code"
+                            android:inputType="textCapCharacters"
+                            android:paddingHorizontal="14dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/inter"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnApplyPromoSubReview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="Apply"
+                            android:textAllCaps="false"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            app:cornerRadius="12dp"
+                            app:elevation="0dp"
+                            app:backgroundTint="@color/md_theme_primary"
+                            android:textColor="@color/md_theme_onPrimary"/>
+                    </LinearLayout>
+
+                    <!-- Promo Discount Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="14dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Promo Discount"
+                            android:textColor="@color/md_theme_onSurfaceVariant"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/inter"/>
+                        <TextView
+                            android:id="@+id/tvPromoDiscount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="- Rs. 0.00"
+                            android:textColor="@color/md_theme_onSurface"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins"/>
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/md_theme_outlineVariant"
+                        android:alpha="0.25"
+                        android:layout_marginVertical="18dp"/>
+
+                    <!-- Green Points Label + Balance -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Redeem Green Points"
+                            android:textColor="@color/md_theme_outline"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/inter"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.03"/>
+
+                        <TextView
+                            android:id="@+id/tvPointsBalanceSubReview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balance: 0 pts"
+                            android:textColor="@color/md_theme_tertiary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter"/>
+                    </LinearLayout>
+
+                    <!-- Redeem Points Input -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/edittext_bg"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp">
+
+                        <EditText
+                            android:id="@+id/etRedeemPointsSubReview"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter points to redeem"
+                            android:inputType="number"
+                            android:paddingHorizontal="14dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/inter"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnApplyPointsSubReview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="Apply"
+                            android:textAllCaps="false"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            app:cornerRadius="12dp"
+                            app:elevation="0dp"
+                            app:backgroundTint="@color/md_theme_tertiaryContainer"
+                            android:textColor="@color/md_theme_onTertiaryContainer"/>
+
+                    </LinearLayout>
+
+                    <!-- Green Points Applied Row — only visible when points redeemed -->
+                    <LinearLayout
+                        android:id="@+id/layoutGreenPointsRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Green Points Applied"
+                            android:textColor="@color/md_theme_tertiary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter"
+                            android:maxLines="1"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/tvGreenPointsValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/md_theme_tertiary"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins"
+                            android:maxLines="1"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <!-- Delivery Fee -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="14dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Delivery Fee"
+                            android:textColor="@color/md_theme_onSurfaceVariant"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/inter"/>
+                        <TextView
+                            android:id="@+id/tvDeliveryFee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 300.00"
+                            android:textColor="@color/md_theme_onSurface"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins"/>
+                    </LinearLayout>
+
+                    <!-- Total Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/md_theme_outlineVariant"
+                        android:alpha="0.22"
+                        android:layout_marginVertical="16dp"/>
+
+                    <!-- Total Payable -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Payable"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/md_theme_onSurface"
+                            android:fontFamily="@font/poppins"
+                            android:letterSpacing="-0.01"/>
+                        <TextView
+                            android:id="@+id/tvTotalPayable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 0.00"
+                            android:textSize="20sp"
+                            android:textColor="@color/md_theme_primary"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"
+                            android:letterSpacing="-0.01"/>
+                    </LinearLayout>
+
+                    <!-- Points Earned Info — shown below total -->
+                    <LinearLayout
+                        android:id="@+id/layoutPointsEarned"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edittext_bg"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="10dp"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="You'll earn"
+                            android:textColor="@color/md_theme_tertiary"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/inter"
+                            android:maxLines="1"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/tvPointsEarned"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/md_theme_tertiary"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins"
+                            android:maxLines="1"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                    android:layout_marginTop="32dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPayNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Pay Now"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins"
+                    app:cornerRadius="14dp"
+                    android:backgroundTint="@color/md_theme_primary"
+                    android:textColor="@color/md_theme_onPrimary"
+                    app:iconGravity="textStart"
+                    app:iconPadding="10dp"
+                    app:elevation="2dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEditOrder"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Edit Order Items"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter"
+                    android:textColor="@color/md_theme_secondary"
+                    app:backgroundTint="@color/md_theme_secondaryContainer"
+                    app:cornerRadius="14dp"
+                    app:elevation="0dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelReview"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:text="Dismiss"
+                    android:textAllCaps="false"
+                    android:textColor="@color/md_theme_outline"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter"
+                    app:cornerRadius="14dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/md_theme_surfaceContainer"
+    android:elevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_menu"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/md_theme_onSurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/brandLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/menuIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/brandLogo"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/logo"
+                android:scaleType="fitCenter"/>
+
+            <TextView
+                android:id="@+id/brandName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="GreenCart"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/md_theme_onSurface"
+                android:letterSpacing="-0.02"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/actionsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <FrameLayout
+                android:id="@+id/notification"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/notification_icon_description">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_notification"
+                    app:tint="@color/md_theme_onSurface"/>
+
+                <TextView
+                    android:id="@+id/notificationBadge"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/notification_badge"
+                    android:textSize="9sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:fontFamily="@font/inter"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+            </FrameLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/userIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.GreenCart.Circle" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.appbar.MaterialToolbar>
