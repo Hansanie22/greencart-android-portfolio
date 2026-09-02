@@ -13,9 +13,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.util.concurrent.TimeUnit;
 
 public class RetrofitClient {
-    // Base URL for backend API. Defaults to 10.0.2.2 for Android Emulator (mapping to host machine localhost:8080)
-    // For physical device testing, update this to your machine's LAN IP or production server domain.
-    private static final String BASE_URL = "http://10.0.2.2:8080/";
+    // Production Cloud Backend API hosted on Render
+    // For local emulator development, switch to: "http://10.0.2.2:8080/"
+    private static final String BASE_URL = "https://greencart-android-portfolio.onrender.com/";
     private static Retrofit retrofit = null;
 
     public static ApiService getApiService() {
