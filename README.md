@@ -11,7 +11,7 @@
 
 **A comprehensive, production-ready Native Android application for organic supermarket shopping, recurring automated delivery subscriptions, interactive live driver tracking, PayHere payment processing, and gamified loyalty rewards.**
 
-[🌐 Live Interactive Web Showcase](https://hansanie-prabodha.github.io/greencart-mobile-app/) • [📱 Architecture Overview](#-system-architecture) • [🚀 Setup Guide](#-getting-started) • [📡 Backend API](#-companion-backend-api)
+[🌐 Live Interactive Web Showcase](https://hansanie22.github.io/greencart-android-portfolio/) • [📱 Architecture Overview](#-system-architecture) • [🚀 Setup Guide](#-getting-started) • [📡 Backend API](#-companion-backend-api)
 
 </div>
 
@@ -122,8 +122,8 @@ app/src/main/java/com/hansanie/greencart/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/greencart-mobile-app.git
-cd greencart-mobile-app
+git clone https://github.com/Hansanie22/greencart-android-portfolio.git
+cd greencart-android-portfolio
 ```
 
 ### 2. Configure Local Properties & API Keys
